@@ -6,4 +6,6 @@ import time
 
 
 def index(request):
-    return HttpResponse("Hello, world at " + time.strftime("%c"))
+    now = time.strftime("%c")
+    html = "<html><body><h1>Hello, World. It is now %s.</h1> <style> body{background-color: #ADD8E6} h1{text-align: center;} </style> </body></html>" % now
+    return HttpResponse(html)
